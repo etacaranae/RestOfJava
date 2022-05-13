@@ -61,4 +61,14 @@ public class Program {
         canvas.pause();
         canvas.close();
     }
+    
+    public static void plotFunctions(Function[] functions) {
+    	for (Function f: functions) {
+    		canvas.pause();
+            canvas.setColor(Color.orange);
+            for (int x = -360; x < 360; x++) {
+                canvas.plot(x, f.calc(x));
+            }
+    	}
+    }
 }
