@@ -13,12 +13,19 @@ public class Program {
         canvas = new Canvas();
         canvas.setRange(-360, -240, 360, 240);
         canvas.open();
-        Function[] functions = new Function[5];
-        functions[0] = (x) -> {return x;};
-        functions[1] = (x) -> {return (int) (200 * Math.sin(Math.PI * x / 360));};
-        functions[2] = (x) -> {return ((x - 200) * (x + 200)) / 250;};
-        functions[3] = (x) -> {return (int) (20 * Math.log(x));};
-        functions[4] = (x) -> {return (int) ((Math.pow(x, 3)) / 200000);};
+        canvas.setColor(Color.black);
+        Function[] functions = new Function[6];
+        functions[0] = (x) -> { return x;};
+        functions[1] = (x) -> { return (int) (200 * Math.sin(Math.PI * x / 360));};
+        functions[2] = (x) -> { return ((x - 200) * (x + 200)) / 250;};
+        functions[3] = (x) -> { return (int) (20 * Math.log(x));};
+        functions[4] = (x) -> { return (int) ((Math.pow(x, 3)) / 200000);};
+        functions[5] = (x) -> {
+        						int result = (x <= -100)
+        									? (-100)
+        									: ((x >= 100 ? (100) : (x)));
+        						return result;
+        					  };
 
         // plot the functions
         plotFunctions(functions);
@@ -30,7 +37,6 @@ public class Program {
     public static void plotFunctions(Function[] functions) {
     	for (Function f: functions) {
     		canvas.pause();
-            canvas.setColor(Color.black);
             for (int x = -360; x < 360; x++) {
                 canvas.plot(x, f.calc(x));
             }
