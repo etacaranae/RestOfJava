@@ -20,44 +20,9 @@ public class Program {
         functions[3] = (x) -> {return (int) (20 * Math.log(x));};
         functions[4] = (x) -> {return (int) ((Math.pow(x, 3)) / 200000);};
 
-        // Draw a short red diagonal on the canvas
-        canvas.pause();
-        canvas.setColor(Color.red);
+        // plot the functions
+        plotFunctions(functions);
         
-        for (int x = 0; x < 100; x++) {
-            canvas.plot(x, functions[0].calc(x));
-        }
-        
-        // draw a sine wave in blue
-        canvas.pause();
-        canvas.setColor(Color.blue);
-        
-        for (int x = -360; x < 360; x++) {
-            canvas.plot(x, functions[1].calc(x));
-        }
-        
-        // draw a quadratic in green
-        canvas.pause();
-        canvas.setColor(Color.green);
-        for (int x = -360; x < 360; x++) {
-            canvas.plot(x, functions[2].calc(x));
-        }
-        
-        // draw a log graph in black
-        canvas.pause();
-        canvas.setColor(Color.black);
-        for (int x = -360; x < 360; x++) {
-            canvas.plot(x, functions[3].calc(x));
-        }
-        
-        // draw a cubic in orange
-        canvas.pause();
-        canvas.setColor(Color.orange);
-        for (int x = -360; x < 360; x++) {
-            canvas.plot(x, functions[4].calc(x));
-        }
-
-        // Pause and close the canvas then terminate the program.
         canvas.pause();
         canvas.close();
     }
@@ -65,7 +30,7 @@ public class Program {
     public static void plotFunctions(Function[] functions) {
     	for (Function f: functions) {
     		canvas.pause();
-            canvas.setColor(Color.orange);
+            canvas.setColor(Color.black);
             for (int x = -360; x < 360; x++) {
                 canvas.plot(x, f.calc(x));
             }
