@@ -1,6 +1,17 @@
-//import java.awt.Color;
+import java.awt.Color;
 
 public interface Function {
+	/**
+	 * calculates the function
+	 * 
+	 * @param x
+	 *            the function input
+	 * @return the function output
+	 */
 	int calc(int x);
-	//Color pickColor();
+
+	/**
+	 * @return a color
+	 */
+	Color getColor();
 }
