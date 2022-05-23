@@ -17,14 +17,17 @@ public class AllShapes {
      * Creates a bunch of shapes and fills them in the _shapes array.
      */
     public void createShapes() {
-        _point = new Point(Color.RED, 40, 10);
-        _line = new Line(Color.BLUE, 30, 15, 120, 80);
-        _circle = new Circle(Color.PINK, -100, 40, 60);
+        _point = new Point(Color.RED, -40, -10);
+        _line = new Line(Color.BLUE, 30, -15, -120, 80);
+        _circle = new Circle(Color.PINK, -10, 48, 34);
         _polygon = new Polygon(Color.GREEN,
                 new Point[] {
-                        new Point(0, 0),
-                        new Point(100, 0),
-                        new Point(50, 80)
+                        new Point(45, 0),
+                        new Point(100, -25),
+                        new Point(65, 30),
+                        new Point(45, 100),
+                        new Point(25, 30),
+                        new Point(-15, -25)
                 });
     }
 
